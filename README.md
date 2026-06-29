@@ -2,6 +2,4 @@
 
 Corporate website for SUPERLAP Inc.
 
-- HTML
-- Vercel
-- GitHub
+Managed with GitHub + Vercel
