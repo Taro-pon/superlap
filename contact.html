@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>スーパーラップ</title>
+<title>お問い合わせ | スーパーラップ</title>
 <link rel="icon" type="image/svg+xml" href="assets/logo/superlap_favicon.svg">
 <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -25,13 +25,42 @@
   </div>
 </nav>
 
-<section class="hero">
-  <div class="hero-inner">
-    <span class="hero-eyebrow">superlap, Inc.</span>
-    <h1 class="hero-title">挑戦が生まれる<br>仕組みをつくる。</h1>
-    <div class="hero-body">
-      <p>株式会社スーパーラップは、人と人、人とアイデアをつなぐ仕組みづくりに取り組むスモールビジネスカンパニーです。</p>
-      <p>「つくりたい」「やってみたい」という想いが、新しい価値や出会いを生み出すと私たちは考えています。その想いを形にするための場やサービスを提供し、挑戦する人を支えていきます。</p>
+<section class="section contact" id="contact">
+  <div class="section-inner">
+    <div class="section-eyebrow">Contact</div>
+    <h2 class="section-title">お問い合わせ</h2>
+    <div class="contact-layout fade-in">
+      <div>
+        <p class="contact-lead">ご質問・ご相談はお気軽にどうぞ。担当者より3営業日以内にご連絡いたします。</p>
+      </div>
+      <form class="contact-form" id="contactForm"
+            action="https://formspree.io/f/mykanbyj" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">お名前 *</label>
+            <input type="text" id="name" name="name" placeholder="山田 太郎" required>
+          </div>
+          <div class="form-group">
+            <label for="company">会社名・屋号</label>
+            <input type="text" id="company" name="company" placeholder="株式会社〇〇">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">メールアドレス *</label>
+          <input type="email" id="email" name="email" placeholder="mail@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">電話番号</label>
+          <input type="tel" id="phone" name="phone" placeholder="080-1234-5678">
+        </div>
+        <div class="form-group">
+          <label for="message">お問い合わせ内容 *</label>
+          <textarea id="message" name="message" placeholder="ご用件をご記入ください..." required></textarea>
+        </div>
+        <p class="form-notice">* は必須項目です。</p>
+        <button type="submit" class="form-submit">送信する</button>
+        <div class="form-success" id="formSuccess">✓ 送信が完了しました。折り返しご連絡いたします。</div>
+      </form>
     </div>
   </div>
 </section>
@@ -48,5 +77,32 @@
 </footer>
 
 <script src="assets/fade-in.js"></script>
+<script>
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const btn = form.querySelector('.form-submit');
+    btn.textContent = '送信中...';
+    btn.disabled = true;
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.reset();
+        document.getElementById('formSuccess').style.display = 'block';
+        btn.style.display = 'none';
+      } else {
+        btn.textContent = '送信に失敗しました。再度お試しください。';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = '送信に失敗しました。再度お試しください。';
+      btn.disabled = false;
+    }
+  });
+</script>
 </body>
 </html>
