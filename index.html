@@ -434,8 +434,63 @@
   }
 
   /* ========== RESPONSIVE ========== */
+  /* ========== HAMBURGER ========== */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--black);
+    border-radius: 1px;
+    transition: opacity 0.2s, transform 0.2s;
+    transform-origin: center;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    z-index: 99;
+  }
+  .mobile-menu.open { display: block; }
+  .mobile-menu ul {
+    list-style: none;
+    padding: 0.5rem 0;
+  }
+  .mobile-menu ul li a {
+    display: block;
+    padding: 0.9rem 2rem;
+    font-size: 0.9rem;
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.1s;
+  }
+  .mobile-menu ul li:last-child a { border-bottom: none; }
+  .mobile-menu ul li a:hover { background: var(--gray-100); }
+
   @media (max-width: 768px) {
     .nav-links { display: none; }
+    .hamburger { display: flex; }
     .hero { padding: 4rem 1.25rem; }
     .section { padding: 4rem 1.25rem; }
     .mvv-list { grid-template-columns: 1fr; }
@@ -458,6 +513,17 @@
       </svg>
     </a>
     <ul class="nav-links">
+      <li><a href="#philosophy">理念</a></li>
+      <li><a href="#services">運営サービス</a></li>
+      <li><a href="#company">会社概要</a></li>
+      <li><a href="#contact">お問い合わせ</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="メニュー" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
       <li><a href="#philosophy">理念</a></li>
       <li><a href="#services">運営サービス</a></li>
       <li><a href="#company">会社概要</a></li>
@@ -655,6 +721,22 @@
 </footer>
 
 <script>
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', open);
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', false);
+    });
+  });
+
   // Fade in on scroll
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
