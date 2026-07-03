@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>プライバシーポリシー | スーパーラップ</title>
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="assets/logo/superlap_favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap');
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --black: #111111;
+    --white: #ffffff;
+    --off-white: #f7f7f5;
+    --orange: #e05a1e;
+    --orange-light: #f5f0ec;
+    --gray-100: #f5f5f4;
+    --gray-200: #e7e5e4;
+    --gray-400: #a8a29e;
+    --gray-600: #57534e;
+    --gray-800: #292524;
+    --text: #1c1917;
+    --text-muted: #78716c;
+    --border: #e7e5e4;
+    --max-width: 960px;
+    --gutter: 2rem;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    background: var(--white);
+    color: var(--text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ========== NAV ========== */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    color: var(--black);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.85rem;
+    color: var(--gray-600);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .nav-links a:hover { color: var(--black); }
+
+  /* ========== HERO ========== */
+  .hero {
+    background: var(--off-white);
+    border-bottom: 1px solid var(--border);
+    padding: 6rem 0;
+  }
+  .hero-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+  .hero-eyebrow {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 1.5rem;
+  }
+  .hero-title {
+    font-size: clamp(1.8rem, 4.05vw, 2.88rem);
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+    max-width: 640px;
+  }
+  .hero-body {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.85;
+    max-width: 560px;
+  }
+  .hero-body p + p { margin-top: 0.75rem; }
+
+  /* ========== SECTION BASE ========== */
+  .section {
+    padding: 6rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+  .section-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    color: var(--black);
+    margin-bottom: 3rem;
+  }
+
+  /* ========== PHILOSOPHY ========== */
+  .philosophy { background: var(--white); }
+  .mvv-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .mvv-item {
+    background: var(--white);
+    padding: 2rem;
+  }
+  .mvv-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 0.75rem;
+  }
+  .mvv-text {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.75;
+  }
+
+  /* ========== SERVICES ========== */
+  .services { background: var(--off-white); }
+
+  /* Main card — Anymany */
+  .main-service-logo { margin-bottom: 1.2rem; }
+  .past-card-logo {
+    margin-bottom: 0.6rem;
+    height: 48px;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .main-service {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--orange);
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+    overflow: hidden;
+  }
+  .main-service-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 1rem;
+  }
+  .main-service-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--black);
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+  .main-service-body {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.85;
+    max-width: 600px;
+    margin-bottom: 1.5rem;
+  }
+  .link-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--orange);
+    text-decoration: none;
+    transition: gap 0.15s;
+  }
+  .link-arrow:hover { gap: 0.7rem; }
+  .link-arrow::after { content: '→'; }
+
+  /* Past projects */
+  .past-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray-400);
+    margin-bottom: 1rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--border);
+  }
+  .past-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    width: 100%;
+    overflow: hidden;
+  }
+  .past-card {
+    background: var(--white);
+    padding: 1.5rem;
+    overflow: hidden;
+    min-width: 0;
+  }
+  .past-card-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray-400);
+    margin-bottom: 0.4rem;
+  }
+  .past-card-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--gray-600);
+    line-height: 1.4;
+    margin-bottom: 0.6rem;
+  }
+  .past-card-body {
+    font-size: 0.82rem;
+    color: var(--gray-400);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+    min-height: 2.9rem;
+  }
+  .link-muted {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--gray-400);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .link-muted:hover { color: var(--gray-600); }
+  .link-muted::after { content: ' →'; }
+
+  /* ========== COMPANY ========== */
+  .company { background: var(--white); }
+  .company-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .company-side {
+    position: sticky;
+    top: 80px;
+  }
+  .company-side-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--black);
+  }
+  .company-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .company-table tr {
+    border-bottom: 1px solid var(--border);
+  }
+  .company-table td {
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    line-height: 1.75;
+    vertical-align: top;
+  }
+  .company-table td:first-child {
+    width: 140px;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    padding-right: 1rem;
+  }
+
+  /* ========== CONTACT ========== */
+  .contact { background: var(--off-white); }
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .contact-lead {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.85;
+    margin-top: 0.5rem;
+  }
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-group label {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--gray-600);
+  }
+  .form-group input,
+  .form-group textarea {
+    background: var(--white);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 0.75rem 1rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    border-radius: 4px;
+    transition: border-color 0.15s;
+    width: 100%;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--orange);
+  }
+  .form-group textarea { resize: vertical; min-height: 120px; }
+  .form-notice {
+    font-size: 0.78rem;
+    color: var(--gray-400);
+    line-height: 1.7;
+  }
+  .form-submit {
+    background: var(--orange);
+    color: white;
+    border: none;
+    padding: 0.85rem 2rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.15s;
+    width: 100%;
+  }
+  .form-submit:hover { background: #c94d1a; }
+  .form-success {
+    display: none;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #166534;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 4px;
+  }
+
+  /* ========== FOOTER ========== */
+  footer {
+    background: var(--black);
+    padding: 2.5rem 0;
+  }
+  .footer-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-logo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    color: var(--white);
+  }
+  .footer-copy {
+    font-size: 0.78rem;
+    color: var(--gray-400);
+  }
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.4rem;
+  }
+  .footer-privacy {
+    font-size: 0.75rem;
+    color: var(--gray-400);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .footer-privacy:hover { color: var(--white); }
+
+  /* ========== FADE IN ========== */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ========== RESPONSIVE ========== */
+  /* ========== HAMBURGER ========== */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--black);
+    border-radius: 1px;
+    transition: opacity 0.2s, transform 0.2s;
+    transform-origin: center;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    z-index: 99;
+  }
+  .mobile-menu.open { display: block; }
+  .mobile-menu ul {
+    list-style: none;
+    padding: 0.5rem 0;
+  }
+  .mobile-menu ul li a {
+    display: block;
+    padding: 0.9rem 2rem;
+    font-size: 0.9rem;
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.1s;
+  }
+  .mobile-menu ul li:last-child a { border-bottom: none; }
+  .mobile-menu ul li a:hover { background: var(--gray-100); }
+
+  @media (max-width: 768px) {
+    :root { --gutter: 1.25rem; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .hero { padding: 4rem 0; }
+    .section { padding: 4rem 0; }
+    .mvv-list { grid-template-columns: 1fr; }
+    .past-grid { grid-template-columns: 1fr; }
+    .company-layout { grid-template-columns: 1fr; gap: 2rem; }
+    .company-side { position: static; }
+    .contact-layout { grid-template-columns: 1fr; gap: 2rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-inner { flex-direction: column; gap: 0.75rem; text-align: center; }
+  }
+
+  /* ========== PRIVACY PAGE ========== */
+  .privacy-section {
+    background: var(--white);
+    padding: 5rem 0 6rem;
+  }
+  .privacy-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+  .privacy-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 0.75rem;
+  }
+  .privacy-title {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    color: var(--black);
+    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .privacy-body {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: var(--text);
+  }
+  .privacy-body p {
+    margin-bottom: 1.5rem;
+  }
+  .privacy-body h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .privacy-body ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+  }
+  .privacy-body ul li {
+    padding-left: 1rem;
+    position: relative;
+    margin-bottom: 0.4rem;
+    color: var(--text-muted);
+  }
+  .privacy-body ul li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--orange);
+  }
+  .privacy-footer-note {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.75;
+  }
+
+</style>
+
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 166.44 46.94" height="22" aria-label="superlap">
+        <path d="M13.37,18.64l-3.93,2.09c-.62-1.27-1.39-1.9-2.31-1.9-.44,0-.81.15-1.12.43-.31.29-.46.66-.46,1.11,0,.79.92,1.57,2.75,2.35,2.52,1.09,4.22,2.09,5.1,3,.88.92,1.31,2.15,1.31,3.7,0,1.99-.73,3.65-2.2,4.99-1.42,1.27-3.15,1.9-5.16,1.9-3.46,0-5.9-1.69-7.34-5.06l4.06-1.88c.56.99,1,1.61,1.29,1.88.58.54,1.27.8,2.07.8,1.61,0,2.41-.73,2.41-2.2,0-.85-.62-1.64-1.86-2.37-.48-.24-.96-.47-1.44-.7-.48-.23-.97-.46-1.46-.7-1.38-.68-2.36-1.35-2.92-2.03-.72-.86-1.08-1.97-1.08-3.32,0-1.79.61-3.27,1.84-4.44,1.25-1.17,2.78-1.76,4.57-1.76,2.64,0,4.6,1.36,5.88,4.08Z"/><path d="M23.74,15.13v11.83c0,3.41,1.35,5.12,4.04,5.12s4.04-1.71,4.04-5.12v-11.83h4.76v11.93c0,1.65-.21,3.07-.61,4.27-.4,1.07-1.08,2.04-2.05,2.9-1.61,1.4-3.65,2.09-6.13,2.09s-4.51-.7-6.11-2.09c-.99-.86-1.69-1.83-2.09-2.9-.4-.96-.59-2.38-.59-4.27v-11.93h4.76Z"/><path d="M47.34,46.94h-4.76V15.13h4.76v2.24c1.88-1.88,4-2.81,6.39-2.81,2.83,0,5.17,1.04,7,3.13,1.86,2.07,2.79,4.69,2.79,7.85s-.92,5.66-2.77,7.72c-1.83,2.04-4.15,3.07-6.94,3.07-2.41,0-4.57-.97-6.47-2.9v13.52ZM58.66,25.55c0-1.97-.54-3.58-1.61-4.82-1.09-1.25-2.45-1.88-4.1-1.88-1.75,0-3.17.61-4.25,1.82-1.09,1.21-1.63,2.81-1.63,4.78s.54,3.53,1.63,4.78c1.07,1.23,2.48,1.84,4.23,1.84,1.65,0,3.01-.62,4.08-1.86,1.1-1.24,1.65-2.79,1.65-4.65Z"/><path d="M87.33,26.55h-14.77c.13,1.69.68,3.04,1.65,4.04.97.99,2.22,1.48,3.74,1.48,1.18,0,2.17-.28,2.94-.85.76-.56,1.63-1.61,2.6-3.13l4.02,2.24c-.62,1.06-1.28,1.96-1.97,2.72-.69.75-1.43,1.38-2.22,1.86s-1.64.84-2.56,1.07-1.91.34-2.98.34c-3.08,0-5.54-.99-7.4-2.96-1.86-1.99-2.79-4.63-2.79-7.91s.9-5.9,2.71-7.91c1.82-1.99,4.23-2.98,7.24-2.98s5.43.97,7.19,2.9c1.75,1.92,2.62,4.58,2.62,7.98l-.02,1.12ZM82.44,22.66c-.66-2.54-2.26-3.81-4.8-3.81-.58,0-1.12.09-1.63.26-.51.18-.97.43-1.39.76s-.77.73-1.07,1.2c-.3.47-.52.99-.68,1.59h9.56Z"/><path d="M92.53,15.13h4.76v1.84c.87-.92,1.65-1.54,2.33-1.88.69-.35,1.51-.53,2.45-.53,1.25,0,2.57.41,3.93,1.23l-2.18,4.36c-.9-.65-1.78-.97-2.64-.97-2.6,0-3.89,1.96-3.89,5.88v10.68h-4.76V15.13Z"/><path d="M113.49,0v35.73h-4.76V0h4.76Z"/><path d="M134.71,15.13h4.78v20.6h-4.78v-2.16c-1.96,1.83-4.07,2.75-6.33,2.75-2.85,0-5.2-1.03-7.07-3.09-1.85-2.1-2.77-4.72-2.77-7.87s.92-5.66,2.77-7.72,4.16-3.09,6.94-3.09c2.4,0,4.55.99,6.45,2.96v-2.39ZM123.42,25.36c0,1.97.53,3.58,1.59,4.82,1.09,1.26,2.45,1.88,4.1,1.88,1.76,0,3.19-.61,4.27-1.82,1.08-1.25,1.63-2.85,1.63-4.78s-.54-3.53-1.63-4.78c-1.09-1.23-2.5-1.84-4.23-1.84-1.64,0-3,.62-4.1,1.86-1.09,1.26-1.63,2.81-1.63,4.65Z"/><path d="M150.26,46.94h-4.76V15.13h4.76v2.24c1.88-1.88,4-2.81,6.39-2.81,2.83,0,5.17,1.04,7,3.13,1.86,2.07,2.79,4.69,2.79,7.85s-.92,5.66-2.77,7.72c-1.83,2.04-4.15,3.07-6.94,3.07-2.41,0-4.57-.97-6.47-2.9v13.52ZM161.58,25.55c0-1.97-.54-3.58-1.61-4.82-1.09-1.25-2.45-1.88-4.1-1.88-1.75,0-3.17.61-4.25,1.82-1.09,1.21-1.63,2.81-1.63,4.78s.54,3.53,1.63,4.78c1.07,1.23,2.48,1.84,4.23,1.84,1.65,0,3.01-.62,4.08-1.86,1.1-1.24,1.65-2.79,1.65-4.65Z"/>
+      </svg>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#philosophy">理念</a></li>
+      <li><a href="index.html#services">運営サービス</a></li>
+      <li><a href="index.html#company">会社概要</a></li>
+      <li><a href="index.html#contact">お問い合わせ</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="メニュー" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html#philosophy">理念</a></li>
+      <li><a href="index.html#services">運営サービス</a></li>
+      <li><a href="index.html#company">会社概要</a></li>
+      <li><a href="index.html#contact">お問い合わせ</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<main class="privacy-section">
+  <div class="privacy-inner">
+    <div class="privacy-eyebrow">Privacy Policy</div>
+    <h1 class="privacy-title">プライバシーポリシー</h1>
+    <div class="privacy-body">
+      <p>株式会社スーパーラップ（以下、「当社」といいます。）は、当社が運営するウェブサイトにおいて取得する個人情報について、以下の方針に基づき適切に取り扱います。</p>
+
+      <h2>1. 個人情報の取得</h2>
+      <p>当社は、お問い合わせフォーム等を通じて、お名前、メールアドレス、お問い合わせ内容などの情報を取得する場合があります。</p>
+
+      <h2>2. 利用目的</h2>
+      <p>取得した個人情報は、以下の目的のために利用します。</p>
+      <ul>
+        <li>お問い合わせへの回答</li>
+        <li>サービスの提供および運営</li>
+        <li>必要なご連絡</li>
+        <li>サービス改善および品質向上</li>
+      </ul>
+
+      <h2>3. 第三者への提供</h2>
+      <p>当社は、法令に基づく場合を除き、ご本人の同意なく第三者へ個人情報を提供することはありません。</p>
+
+      <h2>4. 個人情報の管理</h2>
+      <p>当社は、個人情報の漏えい、紛失、改ざん等を防止するため、適切な安全管理措置を講じます。</p>
+
+      <h2>5. アクセス解析</h2>
+      <p>当サイトでは、サービス改善のためGoogle Analyticsなどのアクセス解析ツールを利用する場合があります。これらのツールではCookieを利用してアクセス情報を収集することがありますが、個人を特定する情報は含まれません。</p>
+
+      <h2>6. プライバシーポリシーの変更</h2>
+      <p>本ポリシーは、法令の改正やサービス内容の変更等に応じて、予告なく変更する場合があります。</p>
+
+      <h2>7. お問い合わせ</h2>
+      <p>本ポリシーに関するお問い合わせは、当サイトの<a href="index.html#contact" style="color:var(--orange);text-decoration:none;">お問い合わせフォーム</a>よりご連絡ください。</p>
+
+      <div class="privacy-footer-note">
+        <p>制定日：2026年7月<br>株式会社スーパーラップ</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 166.44 46.94" height="20" aria-label="superlap" style="fill:#ffffff">
+        <path d="M13.37,18.64l-3.93,2.09c-.62-1.27-1.39-1.9-2.31-1.9-.44,0-.81.15-1.12.43-.31.29-.46.66-.46,1.11,0,.79.92,1.57,2.75,2.35,2.52,1.09,4.22,2.09,5.1,3,.88.92,1.31,2.15,1.31,3.7,0,1.99-.73,3.65-2.2,4.99-1.42,1.27-3.15,1.9-5.16,1.9-3.46,0-5.9-1.69-7.34-5.06l4.06-1.88c.56.99,1,1.61,1.29,1.88.58.54,1.27.8,2.07.8,1.61,0,2.41-.73,2.41-2.2,0-.85-.62-1.64-1.86-2.37-.48-.24-.96-.47-1.44-.7-.48-.23-.97-.46-1.46-.7-1.38-.68-2.36-1.35-2.92-2.03-.72-.86-1.08-1.97-1.08-3.32,0-1.79.61-3.27,1.84-4.44,1.25-1.17,2.78-1.76,4.57-1.76,2.64,0,4.6,1.36,5.88,4.08Z"/><path d="M23.74,15.13v11.83c0,3.41,1.35,5.12,4.04,5.12s4.04-1.71,4.04-5.12v-11.83h4.76v11.93c0,1.65-.21,3.07-.61,4.27-.4,1.07-1.08,2.04-2.05,2.9-1.61,1.4-3.65,2.09-6.13,2.09s-4.51-.7-6.11-2.09c-.99-.86-1.69-1.83-2.09-2.9-.4-.96-.59-2.38-.59-4.27v-11.93h4.76Z"/><path d="M47.34,46.94h-4.76V15.13h4.76v2.24c1.88-1.88,4-2.81,6.39-2.81,2.83,0,5.17,1.04,7,3.13,1.86,2.07,2.79,4.69,2.79,7.85s-.92,5.66-2.77,7.72c-1.83,2.04-4.15,3.07-6.94,3.07-2.41,0-4.57-.97-6.47-2.9v13.52ZM58.66,25.55c0-1.97-.54-3.58-1.61-4.82-1.09-1.25-2.45-1.88-4.1-1.88-1.75,0-3.17.61-4.25,1.82-1.09,1.21-1.63,2.81-1.63,4.78s.54,3.53,1.63,4.78c1.07,1.23,2.48,1.84,4.23,1.84,1.65,0,3.01-.62,4.08-1.86,1.1-1.24,1.65-2.79,1.65-4.65Z"/><path d="M87.33,26.55h-14.77c.13,1.69.68,3.04,1.65,4.04.97.99,2.22,1.48,3.74,1.48,1.18,0,2.17-.28,2.94-.85.76-.56,1.63-1.61,2.6-3.13l4.02,2.24c-.62,1.06-1.28,1.96-1.97,2.72-.69.75-1.43,1.38-2.22,1.86s-1.64.84-2.56,1.07-1.91.34-2.98.34c-3.08,0-5.54-.99-7.4-2.96-1.86-1.99-2.79-4.63-2.79-7.91s.9-5.9,2.71-7.91c1.82-1.99,4.23-2.98,7.24-2.98s5.43.97,7.19,2.9c1.75,1.92,2.62,4.58,2.62,7.98l-.02,1.12ZM82.44,22.66c-.66-2.54-2.26-3.81-4.8-3.81-.58,0-1.12.09-1.63.26-.51.18-.97.43-1.39.76s-.77.73-1.07,1.2c-.3.47-.52.99-.68,1.59h9.56Z"/><path d="M92.53,15.13h4.76v1.84c.87-.92,1.65-1.54,2.33-1.88.69-.35,1.51-.53,2.45-.53,1.25,0,2.57.41,3.93,1.23l-2.18,4.36c-.9-.65-1.78-.97-2.64-.97-2.6,0-3.89,1.96-3.89,5.88v10.68h-4.76V15.13Z"/><path d="M113.49,0v35.73h-4.76V0h4.76Z"/><path d="M134.71,15.13h4.78v20.6h-4.78v-2.16c-1.96,1.83-4.07,2.75-6.33,2.75-2.85,0-5.2-1.03-7.07-3.09-1.85-2.1-2.77-4.72-2.77-7.87s.92-5.66,2.77-7.72,4.16-3.09,6.94-3.09c2.4,0,4.55.99,6.45,2.96v-2.39ZM123.42,25.36c0,1.97.53,3.58,1.59,4.82,1.09,1.26,2.45,1.88,4.1,1.88,1.76,0,3.19-.61,4.27-1.82,1.08-1.25,1.63-2.85,1.63-4.78s-.54-3.53-1.63-4.78c-1.09-1.23-2.5-1.84-4.23-1.84-1.64,0-3,.62-4.1,1.86-1.09,1.26-1.63,2.81-1.63,4.65Z"/><path d="M150.26,46.94h-4.76V15.13h4.76v2.24c1.88-1.88,4-2.81,6.39-2.81,2.83,0,5.17,1.04,7,3.13,1.86,2.07,2.79,4.69,2.79,7.85s-.92,5.66-2.77,7.72c-1.83,2.04-4.15,3.07-6.94,3.07-2.41,0-4.57-.97-6.47-2.9v13.52ZM161.58,25.55c0-1.97-.54-3.58-1.61-4.82-1.09-1.25-2.45-1.88-4.1-1.88-1.75,0-3.17.61-4.25,1.82-1.09,1.21-1.63,2.81-1.63,4.78s.54,3.53,1.63,4.78c1.07,1.23,2.48,1.84,4.23,1.84,1.65,0,3.01-.62,4.08-1.86,1.1-1.24,1.65-2.79,1.65-4.65Z"/>
+      </svg>
+    </span>
+    <div class="footer-right">
+      <a href="privacy.html" class="footer-privacy">プライバシーポリシー</a>
+      <span class="footer-copy">© superlap, Inc. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+</script>
+</body>
+</html>
