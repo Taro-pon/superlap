@@ -49,7 +49,8 @@
 以下はソースコードのみからは確認できず、作業前にユーザーまたはVercel/Google Search Console等の管理画面で確認が必要な事項です。
 
 - Vercel側のプロジェクト設定（ビルド設定、ドメインのDNS設定、環境変数など）
-- Google Search Console・アクセス解析ツールの実際の導入状況（`privacy.html` の「アクセス解析」に関する記載と、`index.html` の実装内容が一致していない可能性がある）
+- Google Search Consoleのサイトマップ登録状態、トップページ以外のページのインデックス状況（所有権確認・HTTPS・トップページのインデックス登録は確認済み。詳細は[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)参照）
+- アクセス解析ツールの実際の導入状況（`privacy.html` の「アクセス解析」に関する記載と、`index.html` の実装内容が一致していない可能性がある）
 - Formspreeの通知先・管理設定
 
 詳細は [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) および [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) の「未確認」項目を参照。

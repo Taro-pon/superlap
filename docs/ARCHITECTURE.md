@@ -86,7 +86,12 @@ Gitコミット履歴から、過去に複数ページ構成を試みた後（`1
 ### Google Search Console
 
 - `index.html` の `<head>` に `<meta name="google-site-verification" content="...">` タグが設置されている（`b83205c` → `0299f4a` で修正済み）。
-- 実際のGoogle Search Console上でのプロパティ設定・インデックス状況・サイトマップ登録状況は**未確認**（Search Console管理画面はこのリポジトリの範囲外）。
+- Google Search Console管理画面にて以下を確認済み（2026-10-27時点、ユーザーによる確認）：
+  - 対象URL: `https://www.superlap.net/`
+  - 所有権の確認: 確認済み
+  - トップページ（`https://www.superlap.net/`）のインデックス登録: 登録済み
+  - HTTPS: 正常
+- サイトマップの登録状態、トップページ以外のページ（`privacy.html` 等）のインデックス状況は**未確認**。
 
 ### Google Fonts
 
