@@ -77,7 +77,9 @@ Gitコミット履歴から、過去に複数ページ構成を試みた後（`1
 - JSON-LD構造化データ（`@type: Organization`）: 会社名、英語名、URL、住所（`PostalAddress`）、代表者（`founder`）、提供サービス（`hasOfferCatalog` として Anymany を記載）
 - `og:image` は確認できず（**未確認／未設定の可能性**）。
 - `privacy.html` には OGP・JSON-LD・`meta description` の記載は確認できず（`index.html` のみに実装されている）。
-- `sitemap.xml` / `robots.txt` はリポジトリ内に確認できず（**未確認**）。
+- `sitemap.xml`・`robots.txt` をリポジトリルートに追加済み（2026-10-27）。
+  - `sitemap.xml`: `https://www.superlap.net/`（トップページ）と `https://www.superlap.net/privacy.html`（プライバシーポリシー）の2件を登録。`lastmod` は各ファイルの最終更新コミット日時（Git履歴から確認できる日付）を記載。
+  - `robots.txt`: 全クローラーに対しクロールを許可し、`sitemap.xml` のURLを記載。追加前の時点でクロール制御の既存設定は確認できなかったため、新規に許可設定のみを追加。
 
 関連コミット: `271269b Add SEO meta tags, OGP, and JSON-LD structured data`
 

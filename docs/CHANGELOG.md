@@ -2,6 +2,15 @@
 
 Git履歴（`main` ブランチ）から確認できる主要な変更をまとめたものです。日付はコミット日時（JST）に基づきます。
 
+## 2026-10-27
+
+- `index.html` の会社概要にある設立年月の誤記を修正（`2025年7月` → `2015年7月`）。他のファイルに同様の誤記がないか検索し、該当箇所は `index.html` の1箇所のみであることを確認
+- SEO基本設定として `sitemap.xml`・`robots.txt` をリポジトリルートに追加（ローカル作業、コミット未実施）
+  - `sitemap.xml`: トップページ（`https://www.superlap.net/`）とプライバシーポリシー（`https://www.superlap.net/privacy.html`）の2件を登録
+  - `robots.txt`: 全クローラーのクロールを許可し、`sitemap.xml` のURLを記載
+- Google Search Console管理画面での確認結果（所有権確認・HTTPS正常・トップページのインデックス登録済み）をドキュメントに反映（`98c226d`）
+- プロジェクトのアーキテクチャ・デプロイフロー・開発ルールに関するドキュメント（README.md, docs/ARCHITECTURE.md, docs/DEPLOYMENT.md, docs/CHANGELOG.md, CLAUDE.md）を新規整備（`98f805c`）
+
 ## 2026-07-03
 
 - フッターの著作権表示とプライバシーポリシーリンクの並び順を修正（`7f549b9`）

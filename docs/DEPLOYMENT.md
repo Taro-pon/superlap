@@ -11,6 +11,7 @@ GitHubとVercelによる公開フロー、ドメイン、更新方法、ロー�
 - `index.html` のOGPタグに本番URLとして `https://www.superlap.net/` が記載されている → **独自ドメイン `www.superlap.net` が本番URLとして使用されている**ことが確認できる。
 - `index.html` に Google Search Console 用の `google-site-verification` メタタグが設置されている。Google Search Console管理画面にて、対象URL `https://www.superlap.net/` の所有権確認・HTTPS・トップページのインデックス登録が確認済み（2026-10-27時点、詳細は[docs/ARCHITECTURE.md](ARCHITECTURE.md)参照）。サイトマップの登録状態・プロパティ種別は未確認。
 - リポジトリに `vercel.json` や `now.json` などのVercel設定ファイルは存在しない → ビルド設定はVercel側のデフォルト（静的ファイルとしての配信）、またはVercelダッシュボード上のプロジェクト設定に依存していると推測される（詳細未確認）。
+- リポジトリルートに `sitemap.xml`・`robots.txt` を追加済み（2026-10-27）。静的ファイルのため、`main` へのデプロイ後は `https://www.superlap.net/sitemap.xml` および `https://www.superlap.net/robots.txt` としてそのまま公開される見込み（デプロイ後の実際の到達確認は未実施）。
 
 ## 2. 未確認の事項（Vercelダッシュボード側で確認が必要）
 
@@ -23,6 +24,7 @@ GitHubとVercelによる公開フロー、ドメイン、更新方法、ロー�
 - 独自ドメイン `www.superlap.net`（および `superlap.net`）のDNS設定・ネームサーバー・リダイレクト設定
 - Preview Deployments（PRごとのプレビュー環境）の有効化状況
 - デプロイ通知（Slack連携等）の設定
+- デプロイ後の `sitemap.xml` / `robots.txt` の実際の到達確認、およびGoogle Search Consoleへのサイトマップ登録（URL送信）の実施状況
 
 ## 3. 公開フロー（想定される標準的なVercel + GitHub連携の挙動）
 
